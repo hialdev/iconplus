@@ -22,7 +22,7 @@ use Laravel\Fortify\Fortify;
 
 
 Route::get('/', [PageController::class, 'landing'])->name('landing');
-Route::get('/home', [PageController::class, 'landing'])->name('home');
+Route::get('/home', [PageController::class, 'landing']);
 
 Fortify::loginView(function () {
     return view('auth.login');
