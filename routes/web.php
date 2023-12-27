@@ -24,7 +24,7 @@ use Laravel\Fortify\Fortify;
 
 Route::get('/', [PageController::class, 'landing'])->name('landing');
 Route::get('/home', [PageController::class, 'landing']);
-Route::get('/login', [OldAuthController::class, 'showLoginForm']);
+Route::get('/login', [OldAuthController::class, 'showLoginForm'])->name('login');
 Fortify::loginView(function () {
     return view('auth.login');
 });
