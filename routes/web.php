@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\JsonController;
+use App\Http\Controllers\OldAuthController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\RoomController;
@@ -23,7 +24,7 @@ use Laravel\Fortify\Fortify;
 
 Route::get('/', [PageController::class, 'landing'])->name('landing');
 Route::get('/home', [PageController::class, 'landing']);
-
+Route::get('/login', [OldAuthController::class, 'showLoginForm']);
 Fortify::loginView(function () {
     return view('auth.login');
 });
